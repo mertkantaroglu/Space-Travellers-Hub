@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+const Missions = () => {
+  return (
+    <div>
 
-export default class Missions extends Component {
-  render() {
-    return <div></div>;
-  }
+    </div>
+  )
 }
+
+export default Missions
