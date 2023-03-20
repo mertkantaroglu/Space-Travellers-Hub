@@ -31,16 +31,6 @@ function Navbar() {
         </div>
         <ul style={linkListBox}>
           <li>
-            <NavLink to="/" style={linkStyle}>
-              Rocket
-            </NavLink>
-          </li>
-          <li style={linkList}>
-            <NavLink to="/Missions" style={linkStyle}>
-              Missions
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/MyProfile" style={linkStyle}>
               My Profile
             </NavLink>
