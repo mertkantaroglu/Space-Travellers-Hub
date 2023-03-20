@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  padding-right: 4%;
+  padding-left: 4%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.line {
+  background-color: #000;
+  height: 1px;
+  margin-right: 4%;
+  margin-left: 4%;
+}
