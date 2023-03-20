@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Rocket from "./components/Rocket";
 import Mission from "./components/Missions";
 import MyProfile from "./components/MyProfile";
+import Dragon from "./components/Dragon";
+
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Rocket />} />
           <Route path="/Missions" element={<Mission />} />
+          <Route path="/Dragon" element={<Dragon />} />
           <Route path="/MyProfile" element={<MyProfile />} />
         </Routes>
       </div>

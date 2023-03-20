@@ -22,6 +22,11 @@ function Navbar() {
               Missions
             </NavLink>
           </li>
+          <li className="linkList">
+            <NavLink to="/Dragon" className="linkStyle">
+              Dragon
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <hr className="line" />
