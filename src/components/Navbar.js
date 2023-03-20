@@ -3,20 +3,20 @@ import logo from "../img/planet.png";
 import "../styles/navbar.css";
 
 function Navbar() {
-
   return (
     <>
-      <nav className="nav">
+      <nav className="nav ">
         <div className="logo-container">
           <img src={logo} className="logo" alt="website-logo" />
           <h1 className="home-title">Space Travelers' Hub</h1>
         </div>
         <ul className="linkListBox">
-          <li className="linkList">
-            <NavLink to="/MyProfile" className="linkStyle">
-              My Profile
+          <li>
+            <NavLink to="/Rocket" className="linkStyle">
+              Rocket
             </NavLink>
           </li>
+
           <li className="linkList">
             <NavLink to="/Missions" className="linkStyle">
               Missions
@@ -25,6 +25,11 @@ function Navbar() {
           <li className="linkList">
             <NavLink to="/Dragon" className="linkStyle">
               Dragon
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/MyProfile" className="linkStyle">
+              My Profile
             </NavLink>
           </li>
         </ul>
