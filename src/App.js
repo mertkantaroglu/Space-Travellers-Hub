@@ -9,6 +9,7 @@ import MyProfile from "./components/MyProfile";
 import Dragon from "./components/Dragon";
 import { getMissions } from "./redux/mission/missionSlice";
 import { fetchRockets } from "./redux/Rocket/rocketSlice";
+import { getDragon } from "./redux/dragon/dragonSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function App() {
   useEffect(() => {
     dispatch(getMissions());
     dispatch(fetchRockets());
+    dispatch(getDragon());
   }, [dispatch]);
 
   return (

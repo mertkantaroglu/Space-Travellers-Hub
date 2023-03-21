@@ -40,9 +40,20 @@
 .missions {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 .missions-info {
   display: flex;
   gap: 5rem;
+  margin: 1rem;
+  justify-content: space-between;
+}
+
+
+.missions-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
