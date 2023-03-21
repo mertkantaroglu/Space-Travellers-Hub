@@ -1,29 +1,29 @@
 import PropTypes from 'prop-types';
 
-const Missions = ({ mission, description, status }) => {
+const Mission = ({ name, description, status }) => {
   return (
     <div>
       <section className="missions">
-        <ul className="missions-info">
-          <li>Mission</li>
-          <li>Description</li>
-          <li>Status</li>
-        </ul>
-        <ul>
-          <li>{mission}</li>
-          <li>{description}</li>
-          <li>{status}</li>
+        <div className="missions-info">
+          <p>Mission</p>
+          <p>Description</p>
+          <p>Status</p>
+        </div>
+        <div className="missions-details">
+          <h2>{name}</h2>
+          <p>{description}</p>
+          <h3>{status}</h3>
           <button type="button">Join Mission</button>
-        </ul>
+        </div>
       </section>
     </div>
   )
 };
 
-Missions.propTypes = {
-  mission: PropTypes.string.isRequired,
+Mission.propTypes = {
+  name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
 };
 
-export default Missions;
+export default Mission;
