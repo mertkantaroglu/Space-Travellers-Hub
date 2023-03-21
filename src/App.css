@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.missions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.missions-info {
+  display: flex;
+  gap: 5rem;
+}
