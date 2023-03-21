@@ -9,17 +9,15 @@ import Dragon from "./components/Dragon";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div id="main-container">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Rocket />} />
-          <Route path="/Missions" element={<Mission />} />
-          <Route path="/Dragon" element={<Dragon />} />
-          <Route path="/MyProfile" element={<MyProfile />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Rocket />} />
+        <Route path="/Missions" element={<Mission />} />
+        <Route path="/Dragon" element={<Dragon />} />
+        <Route path="/MyProfile" element={<MyProfile />} />
+      </Routes>
+    </>
   );
 }
 
