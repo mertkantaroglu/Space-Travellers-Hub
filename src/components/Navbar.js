@@ -17,18 +17,18 @@ function Navbar() {
             </NavLink>
           </li>
 
-          <li className="linkList">
+          <li>
             <NavLink to="/Missions" className="linkStyle">
               Missions
             </NavLink>
           </li>
-          <li className="linkList">
+          <li>
             <NavLink to="/Dragon" className="linkStyle">
               Dragon
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/MyProfile" className="linkStyle">
+          <li className="linkList">
+            <NavLink to="/MyProfile" className="linkStyle myProfile">
               My Profile
             </NavLink>
           </li>
