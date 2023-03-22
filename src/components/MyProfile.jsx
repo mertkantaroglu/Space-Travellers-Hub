@@ -3,17 +3,15 @@ import { ReservedDragons } from './Dragon';
 
 const MyProfile = () => {
   return (
-  <>
-    <div className="mission-profile">
-      <MissionProfile />
-    </div>
-    <div className="my_dragons">
-      <h2>My Dragons</h2>
-      <ul className="dragons_list">
+    <section className="profile-section">
+      <div className="mission-profile">
+        <MissionProfile />
+      </div>
+      <div className="dragon-profile">
+        <h2>My Dragons</h2>
         <ReservedDragons />
-      </ul>
-    </div>
-  </>
+      </div>
+    </section>
   );
 };
 

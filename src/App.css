@@ -71,13 +71,17 @@
   padding: 5px;
 }
 
-.mission-profile {
-  margin-left: 2rem;
-  margin-top: 1rem;
-  width: 40%;
+.profile-section {
+  display: flex;
 }
 
-.mission-profile h2 {
+.mission-profile, .dragon-profile {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  width: 30%;
+}
+
+.mission-profile h2, .dragon-profile h2 {
   margin-bottom: 1rem;
 }
 
@@ -86,7 +90,7 @@
   margin-top: 10px;
 }
 
-.mission-reservations {
+.mission-reservations, .dragon-reservations {
   border: 1px solid lightgrey;
   padding: 20px 10px;
 }

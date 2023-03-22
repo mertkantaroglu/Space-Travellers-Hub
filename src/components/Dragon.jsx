@@ -52,7 +52,7 @@ const ReservedDragons = () => {
   return (
     <div>
       {filterDragons.map((dragon) => (
-        <div key={dragon.id}>{dragon.name}</div>
+        <p className="dragon-reservations" key={dragon.id}>{dragon.name}</p>
       ))}
     </div>
   )
