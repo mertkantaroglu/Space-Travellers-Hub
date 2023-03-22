@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const ROCKETS = "rocket/FetchRokets";
-const BOOK_ROCKETS = "spaceTraveller/bookRocket";
 
 export const fetchRockets = createAsyncThunk(ROCKETS, async () =>
   fetch("https://api.spacexdata.com/v3/rockets")
@@ -30,14 +29,20 @@ const rocketSlice = createSlice({
   },
   reducers: {
     bookRocket: (state, action) => {
-      const Newrockets = state.rockets.map((rocket) => {
+      const rockets = state.rockets.map((rocket) => {
         if (rocket.id !== action.payload) return rocket;
         return { ...rocket, reserved: true };
       });
-      return { ...state, Newrockets };
+      return { ...state, rockets };
+    },
+    cancelRocket: (state, action) => {
+      const rockets = state.rockets.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      return { ...state, rockets };
     },
   },
-
   extraReducers: {
     [fetchRockets.pending]: (state) => ({ ...state, isloading: true }),
     [fetchRockets.fulfilled]: (state, action) => ({
@@ -48,8 +53,6 @@ const rocketSlice = createSlice({
     [fetchRockets.rejected]: (state) => ({ ...state, isloading: false }),
   },
 });
-export const bookRocket = (id) => ({
-  type: BOOK_ROCKETS,
-  payload: id,
-});
+
+export const { bookRocket, cancelRocket } = rocketSlice.actions;
 export default rocketSlice.reducer;

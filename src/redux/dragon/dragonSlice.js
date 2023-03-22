@@ -19,6 +19,7 @@ export const getDragon = createAsyncThunk(
 
 const initialState = {
   dragonStore: [],
+  reservedDragon: [],
   status: 'idle',
   error: '',
 }
@@ -30,12 +31,18 @@ const dragonSlice = createSlice({
     reserveDragon: (state, action) => {
       const { id } = action.payload;
       state.dragonStore = state.dragonStore.map((dragon) => (
-        dragon.id === id ? { ...dragon, reserved: true } : dragon));
+        (dragon.id === id ? { ...dragon, reserved: true } : dragon))
+      );
+      state.reservedDragon = [...state.reservedDragon, id];
     },
     cancelDragon: (state, action) => {
       const { id } = action.payload;
       state.dragonStore = state.dragonStore.map((dragon) => (
-        dragon.id === id ? { ...dragon, reserved: false } : dragon));
+        (dragon.id === id ? { ...dragon, reserved: false } : dragon))
+      );
+      state.reservedDragon = state.reservedDragon.filter(
+        (dragonId) => dragonId !== id
+      );
     },
   },
   extraReducers: (builder) => {
