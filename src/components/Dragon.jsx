@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDragon } from '../redux/dragon/dragonSlice'
 import { cancelDragon, reserveDragon } from '../redux/dragon/dragonSlice';
+import "../styles/dragon.css";
 
 function Dragons({
   id, name, type, image, reserved,
@@ -18,20 +19,29 @@ function Dragons({
   };
 
   return (
-    <div>
-      <h1>{name}</h1>
-      <p>{type}</p>
-      <img src={image} alt="dragon" />
-      {reserved ? (
-        <button onClick={handleCancel} type="button">
-          Cancel booking
-        </button>
-      ) : (
-        <button onClick={handleReserve} type="button">
-          Reserve dragon
-        </button>
-      )}
-    </div>
+    <section className="dragon-section">
+      <div className="img-container">
+        <img src={image} className="dragon-img" alt="dragon" />
+      </div>
+      <div className="details-container">
+        <h1>{name}</h1>
+        <p>{type}</p>
+        <div className={`status ${reserved ? "active reserve-section" : "notActive"}`}>
+          <h3 className="reserved">
+            {reserved ? 'Reserved' : ''}
+          </h3>
+        </div>
+        {reserved ? (
+          <button onClick={handleCancel} type="button" className="cancel-reserve-btn">
+            Cancel Reservation
+          </button>
+        ) : (
+          <button onClick={handleReserve} type="button" className="reserve-btn">
+            Reserve Dragon
+          </button>
+        )}
+      </div>
+    </section>
   );
 }
 
