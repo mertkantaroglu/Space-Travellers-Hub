@@ -45,6 +45,19 @@ function Dragons({
   );
 }
 
+const ReservedDragons = () => {
+  const dragons = useSelector((state) => state.dragons.dragonStore);
+  const filterDragons = dragons.filter((dragons) => dragons.reserved);
+  
+  return (
+    <div>
+      {filterDragons.map((dragon) => (
+        <div key={dragon.id}>{dragon.name}</div>
+      ))}
+    </div>
+  )
+}
+
 Dragons.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -73,4 +86,5 @@ function Dragon() {
   );
 }
 
+export {ReservedDragons}
 export default Dragon;
