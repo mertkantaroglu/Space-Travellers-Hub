@@ -37,6 +37,14 @@ const rocketSlice = createSlice({
       });
       return { ...state, rockets };
     },
+
+    cancelRocket: (state, action) => {
+      const rockets = state.rockets.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      return { ...state, rockets };
+    },
   },
   extraReducers: {
     [fetchRockets.pending]: (state) => ({ ...state, isloading: true }),
