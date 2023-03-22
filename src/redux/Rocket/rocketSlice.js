@@ -56,14 +56,15 @@ const rocketSlice = createSlice({
     [fetchRockets.rejected]: (state) => ({ ...state, isloading: false }),
   },
 });
-export const bookRocket = (id) => ({
-  type: BOOK_ROCKETS,
-  payload: id,
-});
+// export const bookRocket = (id) => ({
+//   type: BOOK_ROCKETS,
+//   payload: id,
+// });
 
-export const cancelRocket = (id) => ({
-  type: CANCEL_ROCKETS,
-  payload: id,
-});
+// export const cancelRocket = (id) => ({
+//   type: CANCEL_ROCKETS,
+//   payload: id,
+// });
 
+export const { bookRocket, cancelRocket } = rocketSlice.actions;
 export default rocketSlice.reducer;

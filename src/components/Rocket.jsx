@@ -9,9 +9,9 @@ function Rockets() {
 
   const bookHandler = (id, reserved) => {
     if (reserved) {
-      return dispatch(bookRocket(id));
+      return dispatch(cancelRocket(id));
     }
-    return dispatch(cancelRocket(id));
+    return dispatch(bookRocket(id));
   };
 
   return (
