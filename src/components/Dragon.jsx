@@ -68,8 +68,11 @@ Dragons.propTypes = {
 
 function Dragon() {
   const dragonsArr = useSelector((state) => state.dragons.dragonStore);
+  const status = useSelector((state) => state.dragons.status);
   const dispatch = useDispatch();
-  useEffect(() => {dispatch(getDragon());}, [dispatch]);
+  useEffect(() => {
+    if (status === 'idle') dispatch(getDragon());
+  }, [dispatch, status]);
   return (
     <div>
       {dragonsArr.map((dragons) => (
