@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button } from "react-bootstrap";
+import { Button, Badge, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { bookRocket, cancelRocket } from "../redux/Rocket/rocketSlice";
 
 function Rockets() {
@@ -19,14 +20,33 @@ function Rockets() {
       <div>
         {rockets.map(
           ({ id, rocket_name, description, flickr_images, reserved }) => (
-            <div key={id}>
-              <img src={flickr_images} />
-              <h2>{rocket_name}</h2>
-              <p>{description}</p>
-              <Button onClick={() => bookHandler(id, reserved)}>
-                {reserved ? "Cancel Reservation" : "Reserve Rocket"}
-              </Button>
-            </div>
+            <Row
+              className="rocket-container align-items-center mt-md-3 m-5"
+              data-testid="rocket"
+              key={id}
+            >
+              <Col sm={5} md={4} lg={3}>
+                <img src={flickr_images} width="100%" />
+              </Col>
+              <Col className="rocket-description">
+                <h2 className="text-capitalize">{rocket_name}</h2>
+                <p>
+                  {reserved && (
+                    <Badge
+                      bg="success"
+                      className="-5"
+                      style={{ marginRight: "1vw" }}
+                    >
+                      reserver
+                    </Badge>
+                  )}
+                  {description}
+                </p>
+                <Button onClick={() => bookHandler(id, reserved)}>
+                  {reserved ? "Cancel Reservation" : "Reserve Rocket"}
+                </Button>
+              </Col>
+            </Row>
           )
         )}
       </div>
