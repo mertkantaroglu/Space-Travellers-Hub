@@ -34,7 +34,7 @@ function Rockets() {
                   {reserved && (
                     <Badge
                       bg="success"
-                      className="-5"
+                      className="p-2"
                       style={{ marginRight: "1vw" }}
                     >
                       Reserver
