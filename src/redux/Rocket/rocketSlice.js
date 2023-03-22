@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const ROCKETS = "rocket/FetchRokets";
+const API_URL="https://api.spacexdata.com/v3/rockets"
 
 export const fetchRockets = createAsyncThunk(ROCKETS, async () =>
-  fetch("https://api.spacexdata.com/v3/rockets")
+  fetch(API_URL)
     .then((response) => response.json())
     .then((data) => {
       const rockets = data.map((rocket) => ({
