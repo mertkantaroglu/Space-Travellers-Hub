@@ -1,17 +1,19 @@
-import React from 'react';
+import MissionProfile from "./Mission/MissionProfile";
 import { ReservedDragons } from './Dragon';
 
-function Profile() {
+const MyProfile = () => {
   return (
-    <div>
-      <div className="my_dragons">
-        <h2>My Dragons</h2>
-        <ul className="dragons_list">
-          <ReservedDragons />
-        </ul>
-      </div>
-    </div>
+  <div className="mission-profile">
+    <MissionProfile />
+  </div>
+  <div className="my_dragons">
+    <h2>My Dragons</h2>
+    <ul className="dragons_list">
+      <ReservedDragons />
+    </ul>
+  </div>
+
   );
-}
+};
 
 export default Profile;

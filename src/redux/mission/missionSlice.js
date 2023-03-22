@@ -59,7 +59,7 @@ const missionSlice = createSlice({
       return {
         ...state,
         missionList,
-        status: 'loaded',
+        status: 'succeed',
       };
     })
 
