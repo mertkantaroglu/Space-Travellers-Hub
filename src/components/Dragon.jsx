@@ -45,6 +45,19 @@ function Dragons({
   );
 }
 
+const ReservedDragons = () => {
+  const dragons = useSelector((state) => state.dragons.dragonStore);
+  const filterDragons = dragons.filter((dragons) => dragons.reserved);
+  
+  return (
+    <div>
+      {filterDragons.map((dragon) => (
+        <div key={dragon.id}>{dragon.name}</div>
+      ))}
+    </div>
+  )
+}
+
 Dragons.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -55,8 +68,11 @@ Dragons.propTypes = {
 
 function Dragon() {
   const dragonsArr = useSelector((state) => state.dragons.dragonStore);
+  const status = useSelector((state) => state.dragons.status);
   const dispatch = useDispatch();
-  useEffect(() => {dispatch(getDragon());}, [dispatch]);
+  useEffect(() => {
+    if (status === 'idle') dispatch(getDragon());
+  }, [dispatch, status]);
   return (
     <div>
       {dragonsArr.map((dragons) => (
@@ -73,4 +89,5 @@ function Dragon() {
   );
 }
 
+export {ReservedDragons}
 export default Dragon;
