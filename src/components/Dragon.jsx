@@ -22,6 +22,9 @@ function Dragons({
       <h1>{name}</h1>
       <p>{type}</p>
       <img src={image} alt="dragon" />
+      <h3 className={`status ${reserved ? "active" : "notActive"}`}>
+        {reserved ? 'Reserved' : ''}
+      </h3>
       {reserved ? (
         <button onClick={handleCancel} type="button">
           Cancel booking
