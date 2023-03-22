@@ -12,14 +12,16 @@ const Mission = ({ id, name, description, reserved }) => {
           <p>Mission</p>
           <p>Description</p>
           <p>Status</p>
+          <p></p>
         </div>
         <div className="missions-details">
-          <h2>{name}</h2>
+          <h3>{name}</h3>
           <p>{description}</p>
-          <h3 className={`status ${reserved ? "active" : "notActive"}`}>
+          <h4 className={`status ${reserved ? "active" : "notActive"}`}>
             {reserved ? 'Active Member' : 'NOT A MEMBER'}
-          </h3>
-          <button type="button" onClick={reserved ?
+          </h4>
+          <button type="button" className={reserved ? 'leave-btn' : 'join-btn'}
+          onClick={reserved ?
             () => {dispatch(leaveMission(id))}
             : () => {dispatch(joinMission(id))}}
             >

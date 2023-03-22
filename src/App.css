@@ -1,59 +1,73 @@
-.App {
+
+.missions-info {
+  justify-content: space-between;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1.2fr;
+  list-style: none;
+  margin: 0 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.missions-info > * {
+  padding: 5px;
+  border: solid 2px #d3d3d3;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.missions {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.missions-info {
-  display: flex;
-  gap: 5rem;
-  margin: 1rem;
-  justify-content: space-between;
-}
-
 
 .missions-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1.2fr;
+  border: solid 1.5px #d3d3d3;
+  list-style: none;
+  margin: 0 30px;
+  text-align: center;
+  background-color: rgb(242, 242, 242);
+}
+
+.missions-details:nth-child(odd) {
+  background-color: white;
+}
+
+.missions-details > * {
+  padding: 10px;
+  border-right: solid 2px #d3d3d3;
+}
+
+.missions-details h3 {
+  font-size: 16px;
+}
+
+.missions-details .notActive {
+  background-color: grey;
+  color: white;
+  border-radius: 3px;
+  margin: auto;
+  padding: 3px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.missions-details .active {
+  background-color: rgb(4, 143, 39);
+  color: white;
+  margin: auto;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.join-btn {
+  background-color: transparent;
+  border-radius: 3px;
+  border-color: grey;
+  margin: auto;
+}
+
+.leave-btn {
+  margin: auto;
+  color: red;
+  background-color: white;
+  border-color: red;
+  border-radius: 3px;
 }
