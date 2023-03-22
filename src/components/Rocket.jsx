@@ -16,7 +16,7 @@ function Rockets() {
       <div>
         {rockets.map(({ id, rocket_name, description, flickr_images }) => (
           <div key={id}>
-            <img src={flickr_images} alt="rocket" />
+            <img src={flickr_images} alt={rocket_name}/>
             <h2>{rocket_name}</h2>
             <p>{description}</p>
             <Button type="Button" onClick={() => bookHandler(id)}>

@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { joinMission } from '../redux/mission/missionSlice';
 
-const Mission = ({ name, description, status }) => {
+
+const Mission = ({ id, name, description, reserved }) => {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <section className="missions">
@@ -12,8 +17,10 @@ const Mission = ({ name, description, status }) => {
         <div className="missions-details">
           <h2>{name}</h2>
           <p>{description}</p>
-          <h3>{status}</h3>
-          <button type="button">Join Mission</button>
+          <h3 className={`status ${reserved ? "active" : "notActive"}`}>
+            {reserved ? 'Active Member' : 'NOT A MEMBER'}
+          </h3>
+          <button type="button" onClick={() => {dispatch(joinMission(id))}}>{reserved ? 'Leave Mission' : 'Join Mission'}</button>
         </div>
       </section>
     </div>
@@ -21,9 +28,10 @@ const Mission = ({ name, description, status }) => {
 };
 
 Mission.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Mission;
