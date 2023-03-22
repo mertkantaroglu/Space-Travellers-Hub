@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../redux/mission/missionSlice';
 
-
 const Mission = ({ id, name, description, reserved }) => {
   const dispatch = useDispatch();
 

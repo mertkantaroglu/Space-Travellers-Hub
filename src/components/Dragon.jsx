@@ -2,23 +2,45 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDragon } from '../redux/dragon/dragonSlice'
+import { cancelDragon, reserveDragon } from '../redux/dragon/dragonSlice';
 
 function Dragons({
-  name, type, image,
+  id, name, type, image, reserved,
 }) {
-  return (
+  const dispatch = useDispatch();
 
+  const handleReserve = () => {
+    dispatch(reserveDragon({ id }));
+  };
+
+  const handleCancel = () => {
+    dispatch(cancelDragon({ id }));
+  };
+
+  return (
     <div>
       <h1>{name}</h1>
       <p>{type}</p>
       <img src={image} alt="dragon" />
+      {reserved ? (
+        <button onClick={handleCancel} type="button">
+          Cancel booking
+        </button>
+      ) : (
+        <button onClick={handleReserve} type="button">
+          Reserve dragon
+        </button>
+      )}
     </div>
   );
 }
 
 Dragons.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 function Dragon() {
@@ -33,9 +55,9 @@ function Dragon() {
           id={dragons.id}
           name={dragons.name}
           type={dragons.type}
-          image={dragons.flickr_images}
+          image={dragons.flickr_images[0]}
+          reserved={dragons.reserved}
         />
-
       ))}
     </div>
   );
