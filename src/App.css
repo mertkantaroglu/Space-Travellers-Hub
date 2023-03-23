@@ -1,4 +1,3 @@
-
 .missions-info {
   justify-content: space-between;
   font-weight: bold;
@@ -79,7 +78,7 @@
 .dragon-profile {
   margin-left: 2rem;
   margin-top: 1rem;
-  width: 30%;
+  width: 40%;
 }
 
 .mission-profile h2,
