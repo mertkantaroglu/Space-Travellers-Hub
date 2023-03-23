@@ -40,6 +40,8 @@
 - **Missions Page**
 - **Dragons Page**
 - **My Profile Page**
+- **Reserving and canceling Reservation**
+- **Joinin mission and leaveing mission**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
