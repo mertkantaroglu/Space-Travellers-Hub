@@ -1,8 +1,10 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Button, Badge, Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { bookRocket, cancelRocket } from "../redux/Rocket/rocketSlice";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  Button, Badge, Row, Col,
+} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { bookRocket, cancelRocket } from '../redux/Rocket/rocketSlice';
 
 function Rockets() {
   const { rockets } = useSelector((state) => state.rockets);
@@ -33,22 +35,22 @@ function Rockets() {
                 <h2 className="text-capitalize">{name}</h2>
                 <p>
                   {reserved && (
-                    <Badge
-                      bg="success"
-                      className="p-2"
-                      style={{ marginRight: "1vw" }}
-                    >
-                      Reserved
-                    </Badge>
+                  <Badge
+                    bg="success"
+                    className="p-2"
+                    style={{ marginRight: '1vw' }}
+                  >
+                    Reserved
+                  </Badge>
                   )}
                   {description}
                 </p>
                 <Button onClick={() => bookHandler(id, reserved)}>
-                  {reserved ? "Cancel Reservation" : "Reserve Rocket"}
+                  {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
                 </Button>
               </Col>
             </Row>
-          )
+          ),
         )}
 
       </div>
