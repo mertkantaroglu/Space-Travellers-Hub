@@ -37,7 +37,7 @@ function Rockets() {
                       className="p-2"
                       style={{ marginRight: "1vw" }}
                     >
-                      Reserver
+                      Reserved
                     </Badge>
                   )}
                   {description}
