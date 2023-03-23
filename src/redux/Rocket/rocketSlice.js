@@ -1,27 +1,25 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const ROCKETS = "rocket/FetchRokets";
+const ROCKETS = 'rocket/FetchRokets';
 
-export const fetchRockets = createAsyncThunk(ROCKETS, async () =>
-  fetch("https://api.spacexdata.com/v3/rockets")
-    .then((response) => response.json())
-    .then((data) => {
-      const rockets = data.map((rocket) => ({
-        id: rocket.id,
-        rocket_name: rocket.rocket_name,
-        description: rocket.description,
-        flickr_images: rocket.flickr_images[0],
-      }));
+export const fetchRockets = createAsyncThunk(ROCKETS, async () => fetch('https://api.spacexdata.com/v3/rockets')
+  .then((response) => response.json())
+  .then((data) => {
+    const rockets = data.map((rocket) => ({
+      id: rocket.id,
+      rocket_name: rocket.rocket_name,
+      description: rocket.description,
+      flickr_images: rocket.flickr_images[0],
+    }));
 
-      return rockets;
-    })
-    .catch((error) => {
-      throw new Error(error);
-    })
-);
+    return rockets;
+  })
+  .catch((error) => {
+    throw new Error(error);
+  }));
 
 const rocketSlice = createSlice({
-  name: "rockets",
+  name: 'rockets',
   initialState: {
     rockets: [],
     loading: false,
