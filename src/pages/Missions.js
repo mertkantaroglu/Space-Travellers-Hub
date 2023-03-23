@@ -1,5 +1,5 @@
-import Mission from '../components/Mission/Mission';
 import { useSelector } from 'react-redux';
+import Mission from '../components/Mission/Mission';
 
 const Missions = () => {
   const { missionList } = useSelector((state) => state.missions);
@@ -10,7 +10,7 @@ const Missions = () => {
         <p>Mission</p>
         <p>Description</p>
         <p>Status</p>
-        <p></p>
+        <p />
       </div>
       <div>
         {missionList.map((mission) => (

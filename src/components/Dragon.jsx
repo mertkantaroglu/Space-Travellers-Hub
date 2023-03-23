@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { getDragon } from '../redux/dragon/dragonSlice'
-import { cancelDragon, reserveDragon } from '../redux/dragon/dragonSlice';
-import "../styles/dragon.css";
+import { getDragon, cancelDragon, reserveDragon } from '../redux/dragon/dragonSlice';
+import '../styles/dragon.css';
 
 function Dragons({
   id, name, type, image, reserved,
@@ -26,7 +25,7 @@ function Dragons({
       <div className="details-container">
         <h1>{name}</h1>
         <p>{type}</p>
-        <div className={`status ${reserved ? "active reserve-section" : "notActive"}`}>
+        <div className={`status ${reserved ? 'active reserve-section' : 'notActive'}`}>
           <h3 className="reserved">
             {reserved ? 'Reserved' : ''}
           </h3>
@@ -48,15 +47,15 @@ function Dragons({
 const ReservedDragons = () => {
   const dragons = useSelector((state) => state.dragons.dragonStore);
   const filterDragons = dragons.filter((dragons) => dragons.reserved);
-  
+
   return (
     <div>
       {filterDragons.map((dragon) => (
         <p className="dragon-reservations" key={dragon.id}>{dragon.name}</p>
       ))}
     </div>
-  )
-}
+  );
+};
 
 Dragons.propTypes = {
   id: PropTypes.string.isRequired,
@@ -89,5 +88,5 @@ function Dragon() {
   );
 }
 
-export {ReservedDragons}
+export { ReservedDragons };
 export default Dragon;
