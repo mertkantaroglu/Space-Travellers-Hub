@@ -20,20 +20,19 @@ function Rockets() {
   return (
     <>
       <div>
+
         {rockets.map(
-          ({
-            id, rocket_name, description, flickr_images, reserved,
-          }) => (
+          ({ id, name, description, flickrImages, reserved }) => (
             <Row
               className="rocket-container align-items-center mt-md-3 m-5"
               data-testid="rocket"
               key={id}
             >
               <Col sm={5} md={4} lg={3}>
-                <img src={flickr_images} width="100%" />
+                <img src={flickrImages} width="100%" />
               </Col>
               <Col className="rocket-description">
-                <h2 className="text-capitalize">{rocket_name}</h2>
+                <h2 className="text-capitalize">{name}</h2>
                 <p>
                   {reserved && (
                   <Badge
@@ -53,6 +52,7 @@ function Rockets() {
             </Row>
           ),
         )}
+
       </div>
     </>
   );
