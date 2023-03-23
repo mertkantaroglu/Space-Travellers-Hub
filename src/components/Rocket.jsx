@@ -30,7 +30,7 @@ function Rockets() {
                 <img src={flickrImages} width="100%" />
               </Col>
               <Col className="rocket-description">
-                <h2 className="text-capitalize">{rocketname}</h2>
+                <h2 className="text-capitalize">{name}</h2>
                 <p>
                   {reserved && (
                     <Badge
