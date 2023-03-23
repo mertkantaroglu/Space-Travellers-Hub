@@ -40,34 +40,34 @@ const missionSlice = createSlice({
         return { ...mission, reserved: false };
       });
       return { ...state, missionList };
-    }
+    },
   },
 
   extraReducers(builder) {
     builder
-    .addCase(getMissions.pending, (state) => {
-      state.status = 'loading';
-    })
+      .addCase(getMissions.pending, (state) => {
+        state.status = 'loading';
+      })
 
-    .addCase(getMissions.fulfilled, (state, action) => {
-      const { payload } = action;
-      const missionList = payload.map(({
-        mission_id: id, mission_name: name, description
-      }) => ({
-        id, name, description
-      }));
-      return {
+      .addCase(getMissions.fulfilled, (state, action) => {
+        const { payload } = action;
+        const missionList = payload.map(({
+          mission_id: id, mission_name: name, description,
+        }) => ({
+          id, name, description,
+        }));
+        return {
+          ...state,
+          missionList,
+          status: 'succeed',
+        };
+      })
+
+      .addCase(getMissions.rejected, (state, action) => ({
         ...state,
-        missionList,
-        status: 'succeed',
-      };
-    })
-
-    .addCase(getMissions.rejected, (state, action) => ({
-      ...state,
-      status: 'failed',
-      error: [...state.error, action.error.message],
-    }));
+        status: 'failed',
+        error: [...state.error, action.error.message],
+      }));
   },
 });
 

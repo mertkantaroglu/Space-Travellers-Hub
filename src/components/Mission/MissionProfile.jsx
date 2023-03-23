@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 const MissionProfile = () => {
   const { missionList } = useSelector((state) => state.missions);
@@ -12,7 +12,7 @@ const MissionProfile = () => {
         <div>
           {joinedMissions.map((mission) => (
             <>
-              <p key={mission.id}></p>
+              <p key={mission.id} />
               <p className="mission-reservations">{mission.name}</p>
             </>
           ))}

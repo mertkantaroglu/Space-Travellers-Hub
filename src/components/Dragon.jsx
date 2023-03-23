@@ -1,9 +1,11 @@
+
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { getDragon } from "../redux/dragon/dragonSlice";
 import { cancelDragon, reserveDragon } from "../redux/dragon/dragonSlice";
 import "../styles/dragon.css";
+
 
 function Dragons({ id, name, type, image, reserved }) {
   const dispatch = useDispatch();
@@ -24,12 +26,12 @@ function Dragons({ id, name, type, image, reserved }) {
       <div className="details-container">
         <h1>{name}</h1>
         <p>{type}</p>
-        <div
-          className={`status ${
-            reserved ? "active reserve-section" : "notActive"
-          }`}
-        >
-          <h3 className="reserved">{reserved ? "Reserved" : ""}</h3>
+
+        <div className={`status ${reserved ? 'active reserve-section' : 'notActive'}`}>
+          <h3 className="reserved">
+            {reserved ? 'Reserved' : ''}
+          </h3>
+
         </div>
         {reserved ? (
           <button
