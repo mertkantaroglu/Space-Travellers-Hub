@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-.nav {
+.nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,6 +33,7 @@
 
 .linkListBox {
   display: flex;
+  align-items: center;
   font-size: 1.2rem;
   list-style: none;
 }
@@ -48,11 +49,10 @@
 }
 
 .linkList {
-  border-right: 2px solid black;
   border-left: 2px solid black;
 }
 
-.linkStyle:hover {
+.linkStyle.active {
   text-decoration: underline;
   color: rgb(0, 119, 255);
 }

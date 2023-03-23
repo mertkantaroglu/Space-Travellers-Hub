@@ -72,21 +72,25 @@
 
 .profile-section {
   display: flex;
+  justify-content: center;
+  padding-right: 4%;
+  padding-left: 4%;
 }
 
 .mission-profile,
-.dragon-profile {
-  margin-left: 2rem;
+.dragon-profile,
+.my-rockets {
   margin-top: 1rem;
-  width: 40%;
+  width: 30%;
 }
 
 .mission-profile h2,
-.dragon-profile h2 {
+.dragon-profile h2,
+.my-rockets {
   margin-bottom: 1rem;
 }
 
-.mission-profile .no-missions {
+.mission-profile {
   border: none;
   margin-top: 10px;
 }
@@ -94,6 +98,7 @@
 .mission-reservations,
 .dragon-reservations {
   border: 1px solid lightgrey;
+  margin-right: 20px;
   padding: 20px 10px;
 }
 

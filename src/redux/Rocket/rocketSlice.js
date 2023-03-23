@@ -2,19 +2,15 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const ROCKETS = 'rocket/FetchRokets';
 
-
-export const fetchRockets = createAsyncThunk(ROCKETS, async () =>
-  fetch("https://api.spacexdata.com/v3/rockets")
-    .then((response) => response.json())
-    .then((data) => {
-      const rockets = data.map((rocket) => ({
-        id: rocket.id,
-        name: rocket.rocket_name,
-        description: rocket.description,
-        flickrImages: rocket.flickr_images[0],
-      }));
-  
-
+export const fetchRockets = createAsyncThunk(ROCKETS, async () => fetch('https://api.spacexdata.com/v3/rockets')
+  .then((response) => response.json())
+  .then((data) => {
+    const rockets = data.map((rocket) => ({
+      id: rocket.id,
+      name: rocket.rocket_name,
+      description: rocket.description,
+      flickrImages: rocket.flickr_images[0],
+    }));
 
     return rockets;
   })

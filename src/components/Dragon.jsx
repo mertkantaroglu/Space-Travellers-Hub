@@ -1,13 +1,12 @@
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { getDragon, cancelDragon, reserveDragon } from '../redux/dragon/dragonSlice';
+import '../styles/dragon.css';
 
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { useSelector, useDispatch } from "react-redux";
-import { getDragon } from "../redux/dragon/dragonSlice";
-import { cancelDragon, reserveDragon } from "../redux/dragon/dragonSlice";
-import "../styles/dragon.css";
-
-
-function Dragons({ id, name, type, image, reserved }) {
+function Dragons({
+  id, name, type, image, reserved,
+}) {
   const dispatch = useDispatch();
 
   const handleReserve = () => {
@@ -78,7 +77,7 @@ function Dragon() {
   const status = useSelector((state) => state.dragons.status);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (status === "idle") dispatch(getDragon());
+    if (status === 'idle') dispatch(getDragon());
   }, [dispatch, status]);
   return (
     <div>
