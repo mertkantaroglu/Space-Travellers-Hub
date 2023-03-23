@@ -19,7 +19,7 @@ const MissionProfile = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 export default MissionProfile;
