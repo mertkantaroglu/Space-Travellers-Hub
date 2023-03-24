@@ -116,7 +116,7 @@ npm run test
 - GitHub: [@mertkantaroglu](https://github.com/mertkantaroglu/)
 - Twitter: [@aranelluinwe](https://twitter.com/aranelluinwe)
 - LinkedIn: [mertkantaroglu](https://www.linkedin.com/in/mert-kantaroglu/)
--
+
 ### 👤 **Yemisirach Tamirat**
 
 - GitHub: [@yemisrach](https://github.com/Yemisirach)
