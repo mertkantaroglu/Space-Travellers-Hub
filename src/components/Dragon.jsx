@@ -52,7 +52,6 @@ function Dragons({
 
 const ReservedDragons = () => {
   const dragons = useSelector((state) => state.dragons.dragonStore);
-  console.log(dragons);
   const filterDragons = dragons.filter((dragons) => dragons.reserved);
 
   return (
