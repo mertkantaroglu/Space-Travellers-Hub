@@ -63,9 +63,8 @@ const ReservedRocket = () => {
       <tbody className="m-3">
         <div>{filteredRockets >= 0 && <p>No rockets reserved</p>}</div>
         {filteredRockets.map((rockets) => (
-          <Table>
+          <Table key={rockets.id}>
             <td
-              key={rockets.id}
               className="p-4"
               style={{
                 width: 370,
