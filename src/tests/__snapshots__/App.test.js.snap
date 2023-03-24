@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component test 1`] = `
+Array [
+  <nav
+    className="nav-bar"
+  >
+    <div
+      className="logo-container"
+    >
+      <img
+        alt="website-logo"
+        className="logo"
+        src="planet.png"
+      />
+      <h1
+        className="home-title"
+      >
+        Space Travelers' Hub
+      </h1>
+    </div>
+    <ul
+      className="linkListBox"
+    >
+      <li>
+        <a
+          className="linkStyle"
+          href="/Rocket"
+          onClick={[Function]}
+        >
+          Rocket
+        </a>
+      </li>
+      <li>
+        <a
+          className="linkStyle"
+          href="/Missions"
+          onClick={[Function]}
+        >
+          Missions
+        </a>
+      </li>
+      <li>
+        <a
+          className="linkStyle"
+          href="/Dragon"
+          onClick={[Function]}
+        >
+          Dragon
+        </a>
+      </li>
+      <li
+        className="linkList"
+      >
+        <a
+          className="linkStyle myProfile"
+          href="/MyProfile"
+          onClick={[Function]}
+        >
+          My Profile
+        </a>
+      </li>
+    </ul>
+  </nav>,
+  <hr
+    className="line"
+  />,
+  <div />,
+]
+`;

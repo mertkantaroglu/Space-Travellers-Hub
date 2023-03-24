@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions Render Missions Component 1`] = `
+<div>
+  <section
+    className="missions"
+  >
+    <div
+      className="missions-details"
+    >
+      <h3 />
+      <p />
+      <div
+        className="member-sign"
+      >
+        <h4
+          className="status notActive"
+        >
+          NOT A MEMBER
+        </h4>
+      </div>
+      <div
+        className="btn-container"
+      >
+        <button
+          className="join-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Join Mission
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+`;

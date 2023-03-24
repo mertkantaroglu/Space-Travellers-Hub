@@ -1,0 +1,123 @@
+.missions-info {
+  justify-content: space-between;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1fr;
+  list-style: none;
+  margin: 20px 30px -16px 30px;
+  text-align: center;
+}
+
+.missions-info > * {
+  padding: 5px;
+  border: 1px solid #d3d3d3;
+}
+
+.missions-details {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1fr;
+  border: 1px solid #d3d3d3;
+  list-style: none;
+  margin: 0 30px;
+  text-align: center;
+}
+
+.missions-details h3 {
+  font-size: 16px;
+  padding: 10px;
+  border-right: solid 1px #d3d3d3;
+}
+
+.missions-details p {
+  padding: 10px;
+  border-right: solid 1px #d3d3d3;
+}
+
+.missions-details .notActive {
+  background-color: grey;
+  color: white;
+  border-radius: 4px;
+  margin: auto;
+  padding: 4px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.missions-details .active {
+  background-color: rgb(4, 143, 39);
+  color: white;
+  margin: auto;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.join-btn {
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin: auto;
+  padding: 5px;
+}
+
+.leave-btn {
+  margin: auto;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+  padding-right: 4%;
+  padding-left: 4%;
+  align-items: flex-start;
+}
+
+.profile-section h2 {
+  margin-bottom: 10px;
+}
+
+.mission-profile,
+.dragon-profile,
+.my-rockets {
+  margin-top: 1rem;
+  width: 30%;
+}
+
+.mission-profile {
+  border: none;
+  margin-left: 20px;
+}
+
+.mission-profile h2 {
+  margin-bottom: -8px;
+}
+
+.no-missions {
+  margin-top: 1rem;
+}
+
+.mission-reservations,
+.dragon-reservations {
+  border: 2px solid lightgrey;
+  margin-right: 20px;
+  padding: 24px;
+}
+
+.member-sign {
+  padding: 10px;
+  border-right: solid 1px #d3d3d3;
+  display: flex;
+  align-items: center;
+}
+
+.btn-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
