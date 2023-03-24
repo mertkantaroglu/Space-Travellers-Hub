@@ -3,7 +3,7 @@
 exports[`App component test 1`] = `
 Array [
   <nav
-    className="nav "
+    className="nav-bar"
   >
     <div
       className="logo-container"
