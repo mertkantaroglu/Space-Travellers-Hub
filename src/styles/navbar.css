@@ -8,9 +8,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
   padding-right: 4%;
   padding-left: 4%;
+  height: 15vh;
 }
 
 .logo-container {
@@ -34,8 +34,11 @@
 .linkListBox {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   list-style: none;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  margin-left: -1rem;
 }
 
 .navbar {
@@ -46,7 +49,6 @@
 
 .linkStyle {
   color: rgb(0, 119, 255);
-  margin: 3vw;
   text-decoration: none;
 }
 
@@ -57,4 +59,23 @@
 .linkStyle.active {
   text-decoration: underline;
   color: rgb(0, 119, 255);
+}
+
+.linkStyle.myProfile {
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .logo-container h1 {
+    font-size: 1.5rem;
+    width: 15rem;
+  }
+
+  .linkListBox {
+    font-size: 1rem;
+  }
+
+  .linkStyle {
+    margin: 2vw;
+  }
 }

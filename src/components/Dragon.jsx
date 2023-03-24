@@ -55,11 +55,18 @@ const ReservedDragons = () => {
   const filterDragons = dragons.filter((dragons) => dragons.reserved);
 
   return (
-    <div>
-      {filterDragons.map((dragon) => (
-        <p className="dragon-reservations" key={dragon.id}>{dragon.name}</p>
-      ))}
-    </div>
+    <>
+      {filterDragons.length === 0 ? (
+        <p className="no-dragons">No Dragons Reserved</p>
+      ) : (
+        <div>
+          {filterDragons.map((dragon) => (
+            <p className="dragon-reservations" key={dragon.id}>{dragon.name}</p>
+
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 
