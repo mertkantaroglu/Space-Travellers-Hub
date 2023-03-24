@@ -37,11 +37,13 @@
   font-size: 1.2rem;
   list-style: none;
 }
+
 .navbar {
   display: inline-flex;
   float: right;
   margin-left: 5vw;
 }
+
 .linkStyle {
   color: rgb(0, 119, 255);
   margin: 3vw;
