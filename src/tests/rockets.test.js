@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import TestRenderer from 'react-test-renderer';
-import Rocket from '../components/dragon';
+import Rocket from '../components/Rocket';
 import store from '../redux/store';
 
 describe('Missions', () => {
