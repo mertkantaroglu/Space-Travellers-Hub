@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Button, Badge, Row, Col, Table,
 } from 'react-bootstrap';
-import { bookRocket, cancelRocket } from '../redux/Rocket/rocketSlice';
+import { fetchRockets, bookRocket, cancelRocket } from '../redux/Rocket/rocketSlice';
 
 function Rockets() {
   const { rockets } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (rockets.length === 0) {
+      dispatch(fetchRockets());
+    }
+  }, [dispatch, rockets]);
 
   const bookHandler = (id, reserved) => {
     if (reserved) {

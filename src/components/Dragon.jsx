@@ -54,6 +54,13 @@ const ReservedDragons = () => {
   const dragons = useSelector((state) => state.dragons.dragonStore);
   const filterDragons = dragons.filter((dragons) => dragons.reserved);
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (dragons.length === 0) {
+      dispatch(getDragon());
+    }
+  }, [dispatch, dragons]);
+
   return (
     <>
       {filterDragons.length === 0 ? (
